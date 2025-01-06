@@ -1,0 +1,12 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: darkolivegreen;
+    background-color: aliceblue;
+}
+
+h1{
+    transition: translate 0.3s ease;
+}
+h1:hover{
+    translate: 1rem;
+}
