@@ -1,6 +1,5 @@
 html{
     scroll-behavior: smooth;
-    mar
 }
 
 body {
@@ -29,31 +28,42 @@ header {
     flex-direction: column;
     width: 100vw;
     color: aliceblue;
-    padding-bottom: 2rem;
     h1{
         text-align: center;
     }
 }
 
 header nav ul {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     list-style: none;
     margin: 0;
-    padding: 0rem;
+    padding: 0;
     text-align: center;
     justify-content: space-evenly;
     max-width: 50rem;
     margin: 0 auto;
 
-    a{
-        color: aliceblue;
-        padding: 0.25rem 2rem;
-
+    li {
+        display: flex; /* Ensure child <a> fills the grid cell */
     }
+
+    li a {
+        color: aliceblue;
+        flex-grow: 1;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        text-decoration: none; 
+        transition: background-color 0.3s ease;
+    }
+
     li a:hover,
-    li a:active{
+    li a:active {
         background-color: darkblue;
+        transition: background-color 0.3s ease;
     }
 }
 
@@ -92,4 +102,8 @@ footer{
         text-align: center;
     }
 
+}
+
+.section-title{
+    text-decoration: wavy underline red;
 }
