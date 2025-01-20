@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: rgb(57, 26, 26);
+
+}
+
+h1 + p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(57, 26, 26);
+}
+
+.purple-para{
+    background-color: lavender;
+    color: purple;
+}
+
+ul.orange > li {
+    color: orange;
+}
+
+input[type="text"]{
+    border-radius: 1rem;
+    border: 0.25rem solid blue;
+    padding: 0.125rem 0.5rem;
+}
+
+.button{
+    background-color: pink;
+    padding: 0.25rem 1rem;
+    border-radius: 0.25rem;
+    border: 0.125rem solid red;
+
+    &:hover,
+    &:focus {
+        background-color: salmon;
+        color: white;
+    }
+    &:active{
+        border: dotted;
+    }
+}
