@@ -1,0 +1,49 @@
+body{
+    font-size: 0.875rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width: 100vw;
+    padding: 1rem;
+    line-height: 1.6rem;
+}
+
+h1, h2{
+    color: #007e7e;
+}
+
+h1{
+    font-size: 150%;
+}
+
+h2{
+    font-size: 130%;
+}
+img{
+    width: 100%;
+}
+
+#guarantee{
+    border: 0.125rem solid darkblue;
+    padding: 1rem 1rem 1rem 5rem;
+    box-shadow: 0.25rem 0.25rem black;
+    background-color: aliceblue;
+    font-style: italic;
+    background-image: url(../images/background.gif);
+    background-repeat: no-repeat;
+    max-width: 50rem;
+    text-align: left;
+}
+
+@media screen and (min-width: 26rem) {
+    body{
+        padding: 1rem 2rem;
+    }
+    #guarantee{
+        background-color: lightgreen;
+    }
+}
+
+@media print{
+    body{
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
