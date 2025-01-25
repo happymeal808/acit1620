@@ -1,12 +1,12 @@
 
-/* #0075F2 */
+/* #f20000 */
 /* #9A8873 */
 /* #62466B */
 
 html{
     scroll-behavior: smooth;
     a{
-        color: #FCF7F8;
+        color: #f20000;
         text-decoration: none;
     }
 
@@ -20,9 +20,9 @@ html{
 }
 
 body{
-    background-color: #37393A;
-    color: #FCF7F8;
-    font-family: "Playfair", serif;
+    background-color: #FCF7F8;
+    color: #f20000;
+    font-family: 'Times New Roman', Times, serif;
     position: relative;
 }
 
@@ -32,12 +32,12 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Montserrat", serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .gill-logo{
     fill: none;
-    stroke: #FCF7F8;
+    stroke: #f20000;
     stroke-width: 1rem;
     height: 4rem;
 }
@@ -48,10 +48,11 @@ header{
     height: 6rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 0.5rem;
-    background-color: #0075F2;
+    background-color: #FCF7F8;
+    border-bottom: 0.125rem solid #f20000;
 }
 header nav{
 
@@ -69,18 +70,22 @@ header nav{
         align-items: center;  
         padding: 0;
         border: none;
-        background-color: #0075F2;
+        background-color: #FCF7F8;
+        border: 0.125rem solid #f20000;
         border-radius: 2rem;
         position: fixed;
         z-index: 20;
         bottom: 2rem;
         right: 1rem;
+        transition: border-left-color 0.6s ease,  border-top-left-radius 0.6s ease, border-bottom-left-radius 0.6s ease;
+
 
         svg {
         height: 2.5rem; 
         margin: 0;
-        fill: #FCF7F8;
+        fill: #f20000;
         }
+
     }
 }
 header nav ul {
@@ -91,6 +96,7 @@ header nav ul {
     list-style: none;
     gap: 1.5rem;
     text-transform: lowercase;
+    font-style: italic;
     font-weight: 200;
     padding: 0 1rem 0 0;
     margin: 0;
@@ -100,46 +106,202 @@ header nav ul {
     left: 1rem;
     right: 3.25rem;
     z-index: 10;
-    background-color: #0075F2;
+    background-color: #FCF7F8;
+    border: 0.125rem solid #f20000;
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
 
     a{
-        color: #FCF7F8;
         text-decoration: none;
         font-size: clamp(1.25rem, 2vw, 1.75rem);
     }
 }
 
-/* responsive nav menu */
-.hidden{
-    display: none;
+/* mobile nav menu */
+.hidden {
+    transform: scaleX(0); 
+    transform-origin: right;
+    transition: transform 0.4s ease;
+    pointer-events: none;
+}
+
+.expanded {
+    transform: scaleX(1); 
+    transform-origin: right;
+    pointer-events: auto;
+    transition: transform 0.4s ease;
+}
+
+
+nav button.toggled{
+    border-left-color: #FCF7F8;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    transition: border-left-color 0.1s ease;
 }
 
 /* main content */
 
+#about{
+    margin: 7rem 5rem 7rem;
+    h1{
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 500;
+        font-style: italic;
+        text-align: center;
+    }
+    .first-line{
+        margin-top: 3rem;
+    }
+    .second-line{
+        text-align: right;
+    }
+}
+
 .portfolio-content{
+    h2{
+        font-family: 'Times New Roman', Times, serif;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 300;
+        font-size: clamp(1.5rem, 2vw, 32px);
+        padding: 3rem 0 2rem;
+        border-top: 0.0625rem solid #f20000;
+        margin: 0 3rem;
+    }
     nav{
-        h2{
-            text-align: center;
-            font-weight: 300;
-            font-size: clamp(1.5rem, 2vw, 32px);
-        }
         ul{
             list-style: none;
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: center;
             padding: 0;
             gap: 0.5rem;
+            font-style: italic;
+
             a{
                 background-color: #FCF7F8;
-                color: #0075F2;
+                border: 0.125rem solid #f20000;
                 padding: 0.25rem 0.875rem;
                 text-decoration: none;
                 border-radius: 5rem;
+                transition: color  0.2s ease, background-color 0.2s ease;
+                display: block;
+
+                &:hover,
+                &:active{
+                    background-color: #f20000;
+                    color: #FCF7F8;
+                    transition: color 0.2s ease, background-color 0.2s ease;
+                }
             }
     
         }
     }
+    .project-grid{
+        margin: 2rem 0 4rem;
+    }
+}
+
+/* projects */
+
+.project{
+    border: .125rem solid #f20000;
+    margin: 1.5rem 1rem;
+    padding: 0.75rem;
+    background-color: #f1e8ea;
+    transition: box-shadow 0.3s ease;
+
+    &:hover,
+    &:active{
+        box-shadow: 0.125rem 0.125rem #25221f;
+        transition: box-shadow 0.3s ease;
+    }
+    .project-photo{
+        border: 0.125rem solid #f20000;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .project-type{
+        ul{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.375rem;
+
+            li{
+                background-color: #f20000;
+                color: #FCF7F8;
+                padding: 0.125rem 0.625rem;
+                border-radius: 1rem;
+                font-size: 0.875rem;
+                font-style: italic;
+                font-weight: 200;
+            }
+        }
+    }
+    .project-name{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.5rem;
+        font-style: italic;
+        text-transform: capitalize;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .project-desc{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 200;
+    }
+}
+
+/* footer */
+footer{
+    border-top: 0.125rem solid #f20000;
+    padding: 0 1rem;
+
+    #contact{
+        h3{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.375rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-align: center;
+            border-bottom: 0.0625rem solid #f20000;
+            padding-bottom: 2rem;
+            margin: 2rem 3rem;
+        }
+        ul{
+            font-size: clamp(1rem, 3.5vw, 1.25rem);
+            font-style: italic;
+            text-align: center;
+            margin: 2rem 0 3rem;
+            border-bottom: 0.0625rem solid #f20000;
+            padding-bottom: 2rem;
+            margin: 2rem 3rem;
+            a{
+                text-decoration: underline;
+            }
+        }
+    }
+    .scroll-to-top{
+        text-align: center;
+        margin: 3rem 0 6rem;
+
+        a p{
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-style: italic;
+        }
+        a:hover p{
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        .back-to-top-arrow svg{
+            fill: #f20000;
+        }
+    }
+
 }

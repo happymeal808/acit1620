@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', () =>{
 //  toggle menu button function
     navToggle.addEventListener('click', () =>{
         const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-        navMenu.classList.toggle('hidden');
+        
+        navMenu.classList.toggle('hidden', isExpanded);
+        navMenu.classList.toggle('expanded', !isExpanded);
+        navToggle.classList.toggle('toggled', !isExpanded)
         navToggle.setAttribute('aria-expanded', !isExpanded);
     })
 
@@ -22,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () =>{
             if (isExpanded) {
                 navMenu.classList.add('hidden');
                 navToggle.setAttribute('aria-expanded', 'false');
+                navMenu.classList.remove('expanded');
+                navToggle.classList.remove('toggled');
             }
         })
     }) 
