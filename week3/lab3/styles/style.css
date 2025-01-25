@@ -5,11 +5,6 @@
 
 html{
     scroll-behavior: smooth;
-    a{
-        color: #f20000;
-        text-decoration: none;
-    }
-
 
     ul{
         padding-left: 0;
@@ -24,6 +19,17 @@ body{
     color: #f20000;
     font-family: 'Times New Roman', Times, serif;
     position: relative;
+
+    a{
+        color: #f20000;
+        text-decoration: none;  
+    }
+
+    button:focus,
+    a:focus{
+        border: 0.25rem dashed blue;
+        outline-offset: -0.25rem;
+    }
 }
 
 h1,
@@ -143,7 +149,8 @@ nav button.toggled{
 /* main content */
 
 #about{
-    margin: 7rem 5rem 7rem;
+    margin: 0 5rem 7rem;
+    padding-top: 7rem;
     h1{
         font-family: 'Times New Roman', Times, serif;
         font-weight: 500;
@@ -199,7 +206,7 @@ nav button.toggled{
         }
     }
     .project-grid{
-        margin: 2rem 0 4rem;
+        margin: 2rem auto 4rem;
     }
 }
 
@@ -211,6 +218,8 @@ nav button.toggled{
     padding: 0.75rem;
     background-color: #f1e8ea;
     transition: box-shadow 0.3s ease;
+    height: 30rem;
+    max-width: 24rem;
 
     &:hover,
     &:active{
@@ -303,5 +312,101 @@ footer{
             fill: #f20000;
         }
     }
+}
 
+@media (min-width:26rem){
+    .project{
+        margin: 1.5rem auto;
+    }
+    .expanded{
+        padding-left: 1rem;
+    }
+}
+
+@media (min-width:38rem){
+    #nav-toggle{
+        display: none;
+    }
+    #nav-menu{
+        transform: none;
+        position: absolute;
+        pointer-events: auto;
+        top: 6rem;
+        right: 0;
+        left: 0;
+        gap: 0;
+        border: none;
+        border-bottom: 0.125rem solid #f20000;
+        border-radius: 0;
+        padding-right: 0;
+
+        li{
+            display: inline-block;
+            border-left: 0.125rem solid #f20000;
+            margin: 0;
+            margin: 0;
+            text-align: center;
+            height: 100%;
+            width: clamp(12rem, 20vw, 18rem) ;
+
+            a{
+                display: flex;
+                padding: 1rem 3rem;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                transition: background-color 0.3s ease, color 0.3s ease;
+
+                &:hover,
+                &:active,
+                &:focus{
+                    background-color: #f20000;
+                    color: #FCF7F8;
+                    transition: background-color 0.3s ease, color 0.3s ease;
+                }
+            }
+        }
+        li:last-child{
+            border-right: 0.125rem solid #f20000;
+        }
+    }
+
+    #about{
+        padding-top: 7rem;
+        max-width: 34rem;
+        margin: 4rem auto 7rem;
+    }
+}
+
+@media (min-width: 50rem){
+    #works .portfolio{
+        padding-top: 3.5rem;
+    }
+    .project-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 48rem;
+        gap: 2rem;
+        margin: 2rem auto 4rem;
+    }
+    .project{
+        margin: 0;
+    }
+
+    footer {
+        margin-top: 5rem;
+
+        #contact {
+            h3{
+                margin: 0rem 3rem 3.5rem;
+                padding: 3.5rem 0;
+        
+            }
+
+            ul{
+                padding-bottom: 3.5rem;
+            }
+        }
+    }
+  
 }
