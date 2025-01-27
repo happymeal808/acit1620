@@ -1,0 +1,39 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: darkslategrey;
+    line-height: 1.6rem;
+}
+
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+h1{
+    background-color: blanchedalmond;
+    padding: 2rem 1rem;
+    margin: 0;
+}
+
+article{
+    margin: 2rem 1rem;
+    padding: 1rem 0;
+    max-width: 100%;
+
+    p{
+        padding: 0;
+    }
+
+}
+
+img{
+    width: 20rem;
+    height: 20rem;
+    object-fit:cover;
+}
+h2{
+    border-bottom: 0.125rem solid darkslateblue;
+    padding-bottom: 0.75rem;
+}
