@@ -44,6 +44,17 @@ h1 {
     The grid must have a gap of 16px.
 */
 
+#game {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    .card{
+        height: 8rem;
+        width: 8rem;
+    }
+}
+
 /* Your code goes here for step 1 */
 
 /*  
@@ -52,5 +63,14 @@ h1 {
     timing function of your choice
 
 */
+#game .card img{
+    opacity: 0;
+}
+
+#game .card img:hover{
+    opacity: 1;
+    
+    
+}
 
 /* Your code goes here for step 2 */
