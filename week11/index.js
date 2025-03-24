@@ -83,7 +83,6 @@ function makeCar() {
     let random3 = Math.floor(Math.random() * years.length);
     let random4 = Math.floor(Math.random() * colors.length);
 
-
     let car = {
         make: makes[random1],
         model: models[random2],
